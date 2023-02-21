@@ -1,0 +1,422 @@
+@charset "UTF-8";
+
+/**
+* reset.css
+*/
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed, 
+ figure, figcaption, footer, header, hgroup, 
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-weight: normal;
+    vertical-align: baseline;
+}
+
+
+body {
+    font-size: 14px;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section{
+    display: block;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* custom */
+a {
+    color: #7e8c8d;
+    text-decoration: none;
+    -webkit-backface-visibility: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 5px;
+    background-color: rgba(125, 125, 125, 0.7);
+    -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    width: 5px;
+    background-color: rgba(125, 125, 125, 0.7);
+    -webkit-border-radius: 6px;
+}
+
+html,
+body {
+    width: 100%;
+    font-family: 'Arial', 'Microsoft YaHei', '黑体', '宋体', '微软雅黑', sans-serif;
+}
+
+body {
+    line-height: 1;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after {
+    content: ' ';
+    display: inline-block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* custom */
+a {
+    color: #333;
+    text-decoration: none;
+    -webkit-backface-visibility: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 5px;
+    background-color: rgba(125, 125, 125, 0.7);
+    -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    width: 5px;
+    background-color: rgba(125, 125, 125, 0.7);
+    -webkit-border-radius: 6px;
+}
+
+html,
+body {
+    width: 100%;
+    font-family: 'Microsoft YaHei', 'Arial', '黑体', '宋体', '微软雅黑', sans-serif;
+}
+
+body {
+    line-height: 1;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@media (max-width: 768px) {
+    html {
+        overflow-y: scroll;
+    }
+}
+
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after {
+    content: ' ';
+    display: inline-block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/*隐藏*/
+.dn {
+    display: none;
+}
+
+:root {
+    --main-text-color: #fff;
+    --main-text-color2: #c8c8c8;
+    --main-text-color-green: #0e7b1f;
+    --main-text-color-red: #c61717;
+    --main-bg-color: #14171c;
+    --main-bg-color2: #0a0b0d;
+    --main-bg-color3: #f6f8fa;
+    --main-border-color: #202022;
+    --header-bg-color: #272727;
+    --main-border-top-color: #f25a00;
+    --link-color: #00c0ab;
+    --text-color: #001c36;
+    --main-btn-bg-color: #00e4ea;
+    --main-btn-hover-bg: #4bf9ff;
+    --main-element-err: #F56C6C;
+
+    --main-gape-bg: #f6f8fa;
+    --main-border-line-color: #e6ecf2;
+    --main-link-color: #00c0ab;
+    --header-dropdown-color: #fbfbfb;
+    --btn-info-bg: #7a7a7a;
+}
+
+/************************ container ************************/
+.container,
+.container-lg,
+.container-md,
+.container-sm {
+    padding: 0 0.75rem;
+}
+
+@media (min-width: 576px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+        max-width: 540px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+        max-width: 720px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1320px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 769px) {
+    .d-md-none {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-none {
+        display: none;
+    }
+}
+
+.d-none {
+    display: none;
+}
+
+/************************* 公共样式 ***********************/
+.color-up {
+    color: #00c0ab;
+}
+
+.color-down {
+    color: #ef3123;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-content {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-align-center {
+    display: flex;
+    align-items: center;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.f16 {
+    font-size: 16px;
+}
+
+.f18 {
+    font-size: 18px;
+}
+
+.m-auto {
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.loading-height {
+    height: 200px;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.p-1 {
+    padding: 1rem;
+}
+
+.text-muted {
+    --bs-text-opacity: 1;
+    color: #6c757d;
+}
+
+.text-center {
+    text-align: center;
+}
+
+a,
+a:hover {
+    color: var(--link-color);
+}
+
+a>svg {
+    fill: var(--link-color);
+    stroke: var(--link-color);
+}
+
+/**** header 样式****/
+
+header {
+    width: 100%;
+    height: 3.5rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--header-bg-color);
+    color: var(--main-text-color);
+    font-weight: 500;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+/************页面相关************/
+.main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    flex: 1;
+}
+
+.pre-line {
+    white-space: pre-line;
+}
