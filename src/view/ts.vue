@@ -6,12 +6,13 @@
     <p>uer1:{{ uer1 }}</p>
     <hr>
     <h2>断言</h2>
-
+    <hr>
+    <p>通俗理解：泛型就是解决 类 接口 方法的复用性、以及对不特定数据类型的支持(类型校验)</p>
+    <p>// 泛型：可以支持不特定的数据类型   要求：传入的参数和返回的参数一直</p>
   </div>
 </template>
 
 <script lang="ts">
-import { isNull } from "util"
 import {defineComponent, } from "vue"
 
 export default defineComponent({
@@ -47,21 +48,40 @@ export default defineComponent({
       getName():String;
       getNameAdd:()=> String;
     }
-    class user2 implements INull {
-      name:String = 'zhang san';
-      getName():String{
+    class User2<T> {
+      name:T = 'zhang san';
+      getName():T{
         return this.name
       };
-      getNameAdd(): String{
+      getNameAdd(): T{
         return this.name + 'Add'
-
       };
-      // this.getName()
     }
-    const andNull = (str:String | null)=>{
+    let u2 = new User2<string>()
+    u2.name = "li si"
+    console.log("class---",u2.getName())
+
+    const andNull = (str:String | null):Number=>{
       return str!.length
     }
-    console.log(andNull(''))
+    console.log(andNull('sdaf'))
+
+    // 泛型
+    function getData<T>(value:T):T{
+      return value;
+    }
+    getData<number>(123);
+    console.log("泛型",getData<String>('123'))
+    // 枚举
+    enum Color {
+      red,
+      green='3',
+      yellow=3
+    }
+    console.log("枚举",Color.red,Color.yellow,Color[0])
+    enum Err {'undefined'=-1,'null'=-2,'success'=1};
+    var e:Err=Err.success;
+    console.log("Err",e);
     return {
       arr,
       arr2,

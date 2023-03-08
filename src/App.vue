@@ -19,6 +19,7 @@ components:{
     <router-link to="family">全家桶</router-link> |
     <router-link to="newAttr">Vue3 新特性</router-link> |
     <router-link to="ts">ts 特性</router-link> 
+    <router-link to="todo">todo</router-link> 
     <router-view></router-view>
     <FootCom v-if="isFoot"></FootCom>
   </div>

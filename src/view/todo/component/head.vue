@@ -18,10 +18,12 @@ export default defineComponent({
     const addTodo = async()=>{
       let text:string = val.value
       if(!text.trim()) return
+      let addArr:Array<string> = val.value!.split(" ")
+        console.log("addArr",addArr)
       const obj = {
         id: Date.now(),
-        name: text,
-        age:'43',
+        name: addArr[0],
+        age: addArr[1],
         ischeckbox: false
       }
       await props.addTodoFn(obj)

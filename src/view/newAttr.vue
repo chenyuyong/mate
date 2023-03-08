@@ -2,7 +2,7 @@
   <div>
     <p> fristName: <input type="text" v-model="fristName"></p>
     <p>lastName: <input type="text" v-model="lastName"></p>
-    <p>fullNama: {{ fullName }}</p>
+    <p>computed - fullNama: {{ fullName }}</p>
     <hr>
     <p> strName: <input type="text" v-model="strName"></p>
     <p> watchName: {{ watchName }}</p>
