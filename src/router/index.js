@@ -6,6 +6,7 @@ const Details = { render(){ return '月影WEB-详情页面'} }
 const newAttr = () => import('../view/newAttr.vue')
 const family = () => import('../view/family.vue')
 const ts = () => import('../view/ts.vue')
+const ts418 = () => import('../view/ts418.vue')
 
 import user from "./module/user";
  
@@ -18,6 +19,7 @@ const routes = [
     { path: '/newAttr', component: newAttr },
     { path: '/family', component: family },
     { path: '/ts', component: ts },
+    { path: '/ts418', component: ts418 },
     ...user,
 ]
  
