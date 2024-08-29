@@ -1,0 +1,102 @@
+<template>
+  <div>myPromise</div>
+</template>
+
+<script lang="ts" setup>
+// console.log("11111111");
+import { ref } from "vue";
+
+class MyPromise {
+  static PENDING = 'pending';
+  static FULFILLED = 'fulfilled';
+  static REJECTED = 'rejected';
+  state: string;
+  result: string;
+  resolveCallBack: any[];
+  rejectCallBack: any[];
+  then: (onFulfilled: any, onRejected: any) => MyPromise;
+  constructor(func){
+    this.state = MyPromise.PENDING;
+    this.result = '';
+    this.resolveCallBack = [];
+    this.rejectCallBack = [];
+    // func(this.resolve.bind(this), this.reject.bind(this));
+    try {
+      func(this.resolve.bind(this), this.reject.bind(this));
+    } catch (error) {
+      console.log("error" + error);
+    }
+  }
+  resolve(result){
+    setTimeout(() => {
+      if(this.state === MyPromise.PENDING){
+        this.state = MyPromise.FULFILLED;
+        this.result = result;
+        this.resolveCallBack.forEach(item => {
+          item(result);
+        })
+      }
+    })
+  //  console.log("wo shang..." + result)
+  }
+  reject(result){
+    setTimeout(() => {
+      if(this.state === MyPromise.PENDING){
+        this.state = MyPromise.REJECTED
+        this.result = result;
+        this.rejectCallBack.forEach(item => {
+          item(result);
+        })
+      }
+    })
+  }
+}
+MyPromise.prototype.then = function(onFulfilled, onRejected) {
+  return new MyPromise((resolve, reject) => {
+    onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : result => {console.log(result)};
+    onRejected = typeof onRejected === 'function' ? onRejected : result => {console.log(result)};
+    if( this.state === MyPromise.PENDING){
+      this.resolveCallBack.push(onFulfilled);
+      this.rejectCallBack.push(onRejected);
+    }
+    if( this.state === MyPromise.FULFILLED){
+      // console.log(onFulfilled , this.result)
+      setTimeout(() => {
+        onFulfilled(this.result)
+      })
+    }
+    if( this.state === MyPromise.REJECTED){
+      setTimeout(() => {
+        onRejected(this.result);
+      })
+    }
+  })
+}
+console.log("111");
+let m:any = new MyPromise((resolve, reject) => {
+  console.log("222");
+  setTimeout(() => {
+    resolve('my is 成功');
+    reject('my 失败');
+    console.log("4444 ");
+  });
+});
+m.then(
+  result => {
+    console.log(result)
+  },
+  // undefined,
+  result => {console.log(result)}
+).then(
+  result => {
+    console.log(result)
+  },
+  result => {console.log(result)}
+)
+console.log("3333");
+
+// m()
+// console.log(m())
+</script>
+
+<style></style>

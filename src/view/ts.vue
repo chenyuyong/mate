@@ -17,6 +17,8 @@ import {defineComponent, } from "vue"
 
 export default defineComponent({
   setup(){
+    let str : string = '123'
+    let str1 = <string>'123'
     let arr:Array<number> = [1,2,3]
     let arr2:string[] = ['a','b','c']
     let _un:undefined = undefined
