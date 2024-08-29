@@ -7,6 +7,7 @@ const newAttr = () => import('../view/newAttr.vue')
 const family = () => import('../view/family.vue')
 const ts = () => import('../view/ts.vue')
 const myPromise = () => import('../view/myPromise.vue')
+const ts418 = () => import('../view/ts418.vue')
 
 import user from "./module/user";
  
@@ -20,6 +21,7 @@ const routes = [
     { path: '/family', component: family },
     { path: '/ts', component: ts },
     { path: '/myPromise', component: myPromise },
+    { path: '/ts418', component: ts418 },
     ...user,
 ]
  
